@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Google Sans', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .btn-google {
+    @apply px-6 py-3 rounded-2xl font-medium transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+
+  .btn-primary {
+    @apply bg-google-blue text-white hover:bg-blue-600;
+  }
+
+  .btn-success {
+    @apply bg-google-green text-white hover:bg-green-600;
+  }
+
+  .btn-secondary {
+    @apply bg-google-yellow text-google-black hover:bg-yellow-400;
+  }
+
+  .card-google {
+    @apply bg-white rounded-2xl shadow-lg border border-gray-100 p-6;
+  }
+
+  .input-google {
+    @apply w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-google-blue focus:outline-none transition-colors;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Force hide any floating badges or watermarks */
+[class*="bolt"],
+[id*="bolt"],
+.fixed.bottom-4.right-4,
+footer:has(a[href*="bolt.new"]) {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
